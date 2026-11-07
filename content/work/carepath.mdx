@@ -1,0 +1,112 @@
+---
+title: CarePath
+subtitle: "CarePath: a calmer way for people in cancer treatment, and the people supporting them, to manage appointments, symptoms, and everything in between."
+teaser: "A calmer way for people in cancer treatment, and the people supporting them, to manage appointments, symptoms, and everything in between."
+slug: carepath
+status: coming-soon
+role: Product strategy, design, and engineering, with oncology clinical review
+team: AloTech Labs, plus an oncology clinical advisor
+timeline: In progress
+platform: Mobile
+focus: Product strategy · UX/UI · Clinical review
+showcase: lavender
+order: 4
+covers:
+  - { src: onboarding.png, alt: "CarePath onboarding screen" }
+  - { src: home.png, alt: "CarePath home with the treatment plan and upcoming appointments" }
+  - { src: symptom-tracker.png, alt: "CarePath symptom tracker with a 1 to 5 severity scale" }
+---
+
+## Overview
+
+Cancer treatment asks a lot of a person. Multiple specialists, shifting schedules, medication that changes by cycle, and symptoms that are hard to describe to anyone, let alone track over weeks. CarePath gives patients one calm place to manage all of it: their treatment plan, their appointments, how they're feeling day to day, and a plain-language summary ready before every appointment.
+
+We're building CarePath end to end, the same way we approach every AloTech Labs product: product, design, and engineering together, with an oncology clinical advisor reviewing every piece of patient-facing language.
+
+<Screens>
+  <Screen src="onboarding.png" alt="CarePath onboarding screen" />
+  <Screen src="home.png" alt="CarePath home with the treatment plan and upcoming appointments" />
+</Screens>
+
+## The challenge
+
+People going through cancer treatment are often frightened, tired, or simply overwhelmed, and most tools weren't built with that in mind. Appointments come from different departments on different schedules. Treatment language varies by type (chemotherapy is counted in cycles, radiotherapy in sessions, surgery isn't recurring at all), so a single generic setup flow doesn't fit everyone. And the people closest to a patient often have no visibility into any of it.
+
+The brief: build something that helps without adding to the burden, stays accurate to how oncology care actually works, and knows the difference between "worth mentioning at your next appointment" and "contact your care team today."
+
+## Our role
+
+We're building CarePath from the ground up: product, design, and engineering, with our product team leading requirements and the clinical review process. Every patient-facing flow, especially anything touching symptoms or escalation, went through review with an oncology clinical advisor before being finalised, covering both clinical accuracy and the exact wording a patient would see.
+
+## Our approach
+
+CarePath started from a detailed product requirements document covering the full long-term vision: care coordination, symptom monitoring, mental health support, lifestyle guidance, peer community, and eventual NHS integration. From that vision, the first phase was scoped down to what mattered most: treatment setup, appointments, symptom tracking, and a genuinely useful insights layer, before expanding further.
+
+That insights layer was treated carefully from the start. Every rule is fixed logic, reviewed by the clinical advisor, not an open-ended model: CarePath spots patterns in a patient's own entries, helps them prepare for an appointment, and prompts them to contact their care team when something looks serious. It never diagnoses, names a cause, or suggests a medication.
+
+Design went through several rounds of clinical review. One example: the original treatment setup flow asked everyone "how often are your cycles?", a term that doesn't fit surgery and doesn't quite fit radiotherapy either. Working with the oncology advisor, the wording was rebuilt to change by treatment type instead.
+
+<Screens>
+  <Screen src="onboarding.png" alt="CarePath onboarding screen" />
+  <Screen src="role-selection.png" alt="CarePath role selection: patient, or someone supporting a patient" />
+</Screens>
+
+## The solution
+
+Set up a treatment plan, add appointments, log how you're feeling, and let CarePath handle the remembering.
+
+- **Onboarding** asks only what's needed to get started: account details, role (patient, or someone supporting a patient), and consent, kept separate from any health information, which stays optional and separately consented.
+- **Treatment setup** adapts its own language to the treatment type: cycles for chemotherapy, sessions for radiotherapy, a single date for surgery, and a flexible path for anything else, worked out directly with an oncology advisor.
+- **Appointments** support one-off visits and recurring series, including the irregular, hospital-issued schedules that don't fit a clean interval.
+- **Symptom tracking** takes under a minute: pick a symptom, rate it on a plain-language 1 to 5 scale, and optionally note what medication or treatment was around it.
+- **AI insights** spot patterns worth raising ("you've logged fatigue within 3 days of your last 3 sessions"), build a short "things you may want to discuss" summary before each appointment from the patient's own entries, and prompt the patient to contact their care team when something looks serious, always reviewable, editable, and dismissible.
+- **Notifications** stay considerate: quiet hours, a discreet mode that hides sensitive detail on the lock screen, and separate controls per reminder type.
+
+<Screens>
+  <Screen src="treatment-plan-chemotherapy.png" alt="CarePath treatment setup for chemotherapy, counted in cycles" />
+  <Screen src="add-appointment.png" alt="CarePath form for adding a one-off or recurring appointment" />
+  <Screen src="symptom-tracker.png" alt="CarePath symptom tracker with a 1 to 5 severity scale" />
+  <Screen src="insights-home-with-insight.png" alt="CarePath home showing a pattern insight from the patient's own entries" />
+</Screens>
+
+<Screens>
+  <Screen src="prep-summary.png" alt="CarePath appointment prep summary of things to discuss" />
+  <Screen src="escalation-extreme-rating.png" alt="CarePath prompt to contact the care team after a severe symptom rating" />
+  <Screen src="quiet-hours.png" alt="CarePath quiet hours settings for notifications" />
+</Screens>
+
+## Key features
+
+- **Treatment-aware setup.** Language changes by treatment type instead of forcing everyone into "cycles."
+- **Symptom logging built for a bad day.** Under a minute, plain-language severity scale, done.
+- **Pattern insights, not guesswork.** Fixed, clinically-reviewed rules surface what's worth mentioning, never a diagnosis.
+- **Appointment prep, written for you.** A short summary built from your own entries, ready to edit, save, or share.
+- **A clear line to help.** When something looks serious, CarePath points straight to the patient's saved care team contact, or 999 in an emergency.
+- **Reminders that respect privacy.** Discreet mode and quiet hours, so a lock screen notification never says more than it should.
+- **Built with clinical oversight.** Every patient-facing flow reviewed by an oncology advisor before it shipped.
+
+<Screens>
+  <Screen src="treatment-plan-radiotherapy.png" alt="CarePath treatment setup for radiotherapy, counted in sessions" />
+  <Screen src="symptom-tracker.png" alt="CarePath symptom tracker with a 1 to 5 severity scale" />
+  <Screen src="insights-home-with-insight.png" alt="CarePath home showing a pattern insight from the patient's own entries" />
+  <Screen src="prep-summary.png" alt="CarePath appointment prep summary of things to discuss" />
+  <Screen src="escalation-extreme-rating.png" alt="CarePath prompt to contact the care team after a severe symptom rating" />
+  <Screen src="discreet-mode.png" alt="CarePath discreet mode hiding sensitive detail on the lock screen" />
+</Screens>
+
+## Branding
+
+CarePath's palette is a single calm purple against white and soft lavender, paired with a serif display typeface for headings (used with an italic accent on key words, like "alone") and a clean sans-serif for body text. That mix gives the product a warm, human feel without tipping into anything clinical or corporate. The app icon carries an abstract, interlocking ribbon mark in the same purple, echoed through rounded cards and pill-shaped buttons throughout.
+
+<Screens>
+  <Screen src="onboarding.png" alt="CarePath onboarding screen" />
+  <Screen src="home.png" alt="CarePath home with the treatment plan and upcoming appointments" />
+</Screens>
+
+## Built by AloTech Labs
+
+CarePath is being built as a native mobile app with a rules-based insight engine at its core, not an open-ended AI model. Every pattern, prompt, and escalation message traces back to a defined rule and an oncologist-approved line of wording, with an audit record kept for each one. Treatment setup, appointments, and symptom data all feed that engine, so insights and appointment-prep summaries are always built from a patient's own entries, never invented.
+
+## Closing
+
+CarePath takes the same end-to-end AloTech Labs approach, product, design, and engineering together, and applies it somewhere the stakes are higher than most: supporting people through cancer treatment without ever overstepping into clinical territory. It's a good example of what close collaboration with a clinical advisor looks like in practice.

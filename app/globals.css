@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------
+   Shell tokens (PRD §2). Black and white do the work; pink is accent only.
+   --accent       exact brand pink, read from alotech-logo-variants.svg.
+                  Use for wordmark, dots, focus rings, button hover (non-text or large).
+   --accent-text  pink for small text links. #E91E63 is 4.35:1 on white, which fails
+                  WCAG AA for body text, so links use a slightly deeper pink (4.95:1).
+------------------------------------------------------------------- */
+:root {
+  --bg: #ffffff;
+  --surface: #fafafa;
+  --text: #0b0b0c;
+  --text-muted: #6b6b70;
+  --border: #eaeaec;
+  --accent: #e91e63;
+  --accent-text: #d81b60;
+  --bezel: #0b0b0c;
+  --showcase: #f4f4f5;
+}
+
+.dark {
+  --bg: #0b0b0c;
+  --surface: #141416;
+  --text: #f5f5f5;
+  --text-muted: #9a9aa0;
+  --border: #26262a;
+  --accent: #e91e63;
+  --accent-text: #ff4fa3;
+  --bezel: #1c1c1f;
+  --showcase: #141416;
+}
+
+/* Product showcase tints (PRD §2): soft, low-saturation, close to neutral. */
+[data-showcase="teal"] { --showcase: #eef5f4; }
+[data-showcase="gold"] { --showcase: #f6f2ea; }
+[data-showcase="navy"] { --showcase: #eef0f5; }
+[data-showcase="lavender"] { --showcase: #f3f1f8; }
+.dark [data-showcase="teal"] { --showcase: #111615; }
+.dark [data-showcase="gold"] { --showcase: #161411; }
+.dark [data-showcase="navy"] { --showcase: #11131a; }
+.dark [data-showcase="lavender"] { --showcase: #141219; }
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--text);
+  --color-muted: var(--text-muted);
+  --color-line: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-showcase: var(--showcase);
+
+  --font-display: "Cabinet Grotesk", var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Cabinet Grotesk @font-face is injected by app/layout.tsx only when the file exists in /public/fonts. */
+
+html {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+@media (min-width: 768px) {
+  body { font-size: 18px; }
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Motion: barely there, and off for reduced motion (PRD §2). */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  body, header, a, button, .themed {
+    transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 300ms ease-out, transform 300ms ease-out;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Case study body (MDX) ---------- */
+.case {
+  counter-reset: section;
+}
+/* Text stays in a 680px column; screen groups break out wider (up to 1100px). */
+.case > :not(.screens) {
+  max-width: 680px;
+  margin-inline: auto;
+}
+.case h2 {
+  counter-increment: section;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 6rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  .case h2 { font-size: 2.125rem; margin-top: 9rem; }
+}
+.case h2::before {
+  content: counter(section, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+.case p { margin-bottom: 1.25rem; }
+.case ul { margin: 1.5rem auto; padding-left: 0; list-style: none; }
+.case li { position: relative; padding-left: 1.25rem; margin-bottom: 0.75rem; }
+.case li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--text-muted);
+}
+.case strong { font-weight: 600; }
+.case a { color: var(--accent-text); text-decoration: none; }
+.case a:hover { text-decoration: underline; }
+
+/* Hide scrollbar on swipe rows, keep them scrollable. */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ---------- Brand canvas: hero + beliefs ---------- */
+.hero-grid {
+  background-image: radial-gradient(var(--border) 1.2px, transparent 1.3px);
+  background-size: 24px 24px;
+  background-position: -12px -12px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 65% at 30% 45%, #000 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 65% at 30% 45%, #000 20%, transparent 75%);
+}
+.dark .hero-grid {
+  background-image: radial-gradient(#2e2e33 1.2px, transparent 1.3px);
+}
+
+/* Strikethrough: the brand's pink line through a muted quote. */
+.strike::after {
+  content: "";
+  position: absolute;
+  left: -0.15em;
+  right: -0.15em;
+  top: 54%;
+  height: 0.11em;
+  min-height: 2px;
+  border-radius: 9999px;
+  background: var(--accent);
+}
+
+/* One orchestrated load: noise settles in, cursors converge, the selection lands. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-far, .hero-mid, .hero-near { animation: hero-settle 900ms cubic-bezier(.2,.7,.2,1) both; }
+  .hero-far { animation-delay: 80ms; }
+  .hero-mid { animation-delay: 160ms; }
+  .hero-near { animation-delay: 240ms; }
+  .hero .cursor { animation: hero-cursor 1000ms cubic-bezier(.2,.7,.2,1) both; }
+  .hero-cursor-1 { animation-delay: 500ms !important; --from: translate(70px, 60px); }
+  .hero-cursor-2 { animation-delay: 650ms !important; --from: translate(90px, -50px); }
+  .hero-cursor-3 { animation-delay: 800ms !important; --from: translate(-60px, 70px); }
+  .hero .sel-box { animation: hero-select 450ms ease-out 1300ms both; }
+  .hero .sel-handle { animation: hero-handle 260ms ease-out 1500ms both; }
+}
+@keyframes hero-settle { from { opacity: 0; translate: 0 18px; } }
+@keyframes hero-cursor { from { opacity: 0; transform: var(--from); } }
+@keyframes hero-select { from { opacity: 0; clip-path: inset(0 100% 0 0); } to { opacity: 1; clip-path: inset(0 0 0 0); } }
+@keyframes hero-handle { from { opacity: 0; scale: 0.2; } }
