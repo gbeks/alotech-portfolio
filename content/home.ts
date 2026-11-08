@@ -29,6 +29,6 @@ export const home = {
     title: "Let's talk",
     text: "Have a product that needs building, or an idea that needs shaping into one?",
     // Click-to-copy per PRD §6, so the spec's "Send message →" button isn't used.
-    email: "hr@alotechlabs.com",
+    email: "esther@alotechlabs.com",
   },
 };

@@ -19,7 +19,7 @@ export default function Beliefs({ title, lead, text }: { title: string; lead: st
             key={q}
             className="strike relative w-fit font-display text-[22px] font-bold tracking-[-0.02em] text-muted md:text-[32px]"
             // Older noise sits further back: fainter and smaller.
-            style={{ opacity: 0.38 + i * 0.2, transform: `scale(${0.9 + i * 0.05})`, transformOrigin: "left center" }}
+            style={{ opacity: 0.55 + i * 0.15, transform: `scale(${0.9 + i * 0.05})`, transformOrigin: "left center" }}
           >
             <span className="sr-only">Not: </span>
             {q}

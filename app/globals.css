@@ -19,6 +19,7 @@
   --accent-text: #d81b60;
   --bezel: #0b0b0c;
   --showcase: #f4f4f5;
+  --live: #16a34a;
 }
 
 .dark {
@@ -31,6 +32,7 @@
   --accent-text: #ff4fa3;
   --bezel: #1c1c1f;
   --showcase: #141416;
+  --live: #22c55e;
 }
 
 /* Product showcase tints (PRD §2): soft, low-saturation, close to neutral. */
@@ -52,6 +54,7 @@
   --color-accent: var(--accent);
   --color-accent-text: var(--accent-text);
   --color-showcase: var(--showcase);
+  --color-live: var(--live);
 
   --font-display: "Cabinet Grotesk", var(--font-geist), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
