@@ -23,7 +23,7 @@ const geist = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: "AloTech Labs, Product Studio", template: "%s · AloTech Labs" },
-  description: "A Lagos-based studio that designs and builds software end to end. See our work.",
+  description: "A product studio that designs and builds software end to end. See our work.",
   openGraph: { siteName: "AloTech Labs", type: "website" },
   twitter: { card: "summary_large_image" },
 };
