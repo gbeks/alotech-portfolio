@@ -40,10 +40,14 @@
 [data-showcase="gold"] { --showcase: #f6f2ea; }
 [data-showcase="navy"] { --showcase: #eef0f5; }
 [data-showcase="lavender"] { --showcase: #f3f1f8; }
+[data-showcase="mint"] { --showcase: #edf6f1; }
+[data-showcase="plum"] { --showcase: #f6eff6; }
 .dark [data-showcase="teal"] { --showcase: #111615; }
 .dark [data-showcase="gold"] { --showcase: #161411; }
 .dark [data-showcase="navy"] { --showcase: #11131a; }
 .dark [data-showcase="lavender"] { --showcase: #141219; }
+.dark [data-showcase="mint"] { --showcase: #101613; }
+.dark [data-showcase="plum"] { --showcase: #161117; }
 
 @theme inline {
   --color-bg: var(--bg);

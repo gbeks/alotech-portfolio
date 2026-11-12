@@ -16,7 +16,7 @@ export type WorkMeta = {
   focus: string;
   liveUrl?: string;
   liveLabel?: string;
-  showcase: "teal" | "gold" | "navy" | "lavender";
+  showcase: "teal" | "gold" | "navy" | "lavender" | "mint" | "plum";
   order: number;
   /** Header image(s). Falls back to covers. */
   hero?: ScreenItem[];
