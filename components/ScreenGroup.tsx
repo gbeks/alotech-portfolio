@@ -12,6 +12,8 @@ export type ScreenItem = {
   pending?: string;
   /** A real-world photo (not a 2x export): shown up to its full pixel width, unframed. */
   photo?: boolean;
+  /** Desktop web screen: sized as a standard 1440x1024 frame wide, so every web screen in a case study is the same width; longer pages run taller. */
+  web?: boolean;
   /** Short line shown under the group. */
   caption?: string;
 };
@@ -49,7 +51,7 @@ export function ScreenGroup({
             const framed = !item.unframed && !item.photo;
             const maxW = screen.exists ? Math.round(item.photo ? screen.width : screen.width / 2) : 9999;
             // Unframed images get the same height as the phones, so a row reads at one height.
-            const ratio = screen.exists ? screen.width / screen.height : 16 / 10;
+            const ratio = item.web ? 1440 / 1024 : screen.exists ? screen.width / screen.height : 16 / 10;
             return (
               <ScreenView
                 key={item.src + i}

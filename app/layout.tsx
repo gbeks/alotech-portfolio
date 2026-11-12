@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={geist.variable}>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning className={geist.variable}>
       <head>
         {hasCabinet && (
           <>
@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </>
         )}
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {/* Dark by default; visitors can switch to light and the choice is remembered. No flash on load. */}
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange={false}>
           <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-bg focus:px-3 focus:py-2">
